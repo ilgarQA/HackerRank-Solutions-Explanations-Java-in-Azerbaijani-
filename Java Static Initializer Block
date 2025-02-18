@@ -16,6 +16,6 @@ public class Solution {
         } else { // Şərtin ödənmədiyi hal üçün qeyri hal(else)-dən istifadə edirik
             System.out.println(B*H); // Ekrana paraleloqramın sahəsini verir. Bildiyimiz kimi paraleloqramın sahəsi oturacaq ilə hünndürlüyünün hasilinə bərabərdir. A=B*H.  
         }
-        scanner.close(); 
+        scanner.close(); // Yaratdığımız scanner adlı instansiyanı bağlayır
     }
 }
