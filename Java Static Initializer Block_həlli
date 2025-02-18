@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in); // STDIN(Standard Input)(Keyboard)-dan verilənləri(input) almaq üçün scanner class-ın-dan instansiya(instance) yaradırıq
+        
+        byte B = scanner.nextByte(); // Byte növündən olan "B" adlı dəyişəni(variable) yaradırıq. byte istifadə edə bilərik çünki verilənlər -100 və 100 aralığndadır ki bu byte-ın -128 və 127 aralığından kənara çıxmır. Digər növlərdəndə istifadə oluna bilər lakin uyğun gələn ən kiçik növ hər zaman daha əlverişlidir(smallest appropriate data type).
+        byte H = scanner.nextByte(); // Byte növündən olan "H" adlı dəyişəni(variable) yaradırıq
+        
+        if (B <= 0 || H <= 0){ // B<=0 və H<=0 olduğu halı yoxlamaq üçün if-şərti ifadəsindən(conditional statement) istifadə edirik. ||-bu or üçün istifadə olunur və iki şərtdan ən azı birinin doğru olduğu halda doğrudur. Çünki paraleloqramın hündürlüyü və oturacağı mənfi ola bilməz. 
+            System.out.println("java.lang.Exception: Breadth and height must be positive"); // Şərt ödəndiyi zaman üçün ekrana belə bir mesaj veririk
+            
+        } else{ // Şərtin ödənmədiyi hal üçün qeyri hal(else)-dən istifadə edirik
+            System.out.println(B*H); // Ekrana paraleloqramın sahəsini verir. Bildiyimiz kimi paraleloqramın sahəsi oturacaq ilə hünndürlüyünün hasilinə bərabərdir. A=B*H. 
+            
+        }
+        
+    }
+}
