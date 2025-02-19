@@ -1,0 +1,42 @@
+import java.io.*;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.*;
+
+class Result {
+    // Method to find the day of the week
+    public static String findDay(int month, int day, int year) {
+        // Create a LocalDate object with the given month, day, and year
+        LocalDate date = LocalDate.of(year, month, day);
+        
+        // Get the day of the week as an uppercase string
+        return date.getDayOfWeek().toString(); // Example: "WEDNESDAY"
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        // Read input from standard input (e.g., console or file)
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        // Read a single line of input, trim spaces, and split by space into an array
+        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        // Parse the input values into integers
+        int month = Integer.parseInt(firstMultipleInput[0]);
+        int day = Integer.parseInt(firstMultipleInput[1]);
+        int year = Integer.parseInt(firstMultipleInput[2]);
+
+        // Call the findDay method to determine the day of the week
+        String res = Result.findDay(month, day, year);
+
+        // Write the result to the output file (as required by some online coding platforms)
+        bufferedWriter.write(res);
+        bufferedWriter.newLine();
+
+        // Close the resources to prevent memory leaks
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
