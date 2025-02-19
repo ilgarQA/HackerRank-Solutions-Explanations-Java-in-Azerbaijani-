@@ -4,16 +4,27 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-        
-        Scanner scanner = new Scanner(System.in);      // STDIN(Standard Input)(Keyboard)-dan verilənləri(input) almaq üçün scanner class-ın-dan instansiya(instance) yaradırıq
-        
-        int n = scanner.nextInt();      // Int növündən olan "n" adlı dəyişəni(variable) yaradırıq və onu STDIN-dən alınmış verilənə bərabər edirik
-        String s = Integer.toString(n);      // String növündən olan "s" adlı dəyişəni(variable) yaradırıq və onu Integer.to String() metodu ilə integer-dən String-ə çevrilmiş n-ə bərabər edirik
-        
-        if (s.equals(Integer.toString(n))) {      //  if-şərti ifadəsindən(conditional statement) və equals() metodu ilə s-in Integer.toString(n)-ə bərabər olması şərtini qoyuruq
-            System.out.println("Good job");      // Şərt ödəndiyi halda ekrana "Good job" yazısını veririk   
-        } else { //      Şərtin ödənmədiyi hal üçün qeyri hal(else)-dən istifadə edirik
-            System.out.println("Wrong answer");      // Ekrana "Wrong answer" yazısnı veririk
+
+        // STDIN(Standard Input)(Keyboard)-dan verilənləri(input) almaq üçün scanner class-ın-dan instansiya(instance) yaradırıq
+        Scanner scanner = new Scanner(System.in);
+
+        // Int növündən olan "n" adlı dəyişəni(variable) yaradırıq və onu STDIN-dən alınmış verilənə bərabər edirik
+        int n = scanner.nextInt();
+
+        // String növündən olan "s" adlı dəyişəni(variable) yaradırıq və onu Integer.to String() metodu ilə integer-dən String-ə çevrilmiş n-ə bərabər edirik
+        String s = Integer.toString(n);
+
+        //  if-şərti ifadəsindən(conditional statement) və equals() metodu ilə s-in Integer.toString(n)-ə bərabər olması şərtini qoyuruq
+        if (s.equals(Integer.toString(n))) {
+
+        // Şərt ödəndiyi halda ekrana "Good job" yazısını veririk   
+            System.out.println("Good job");
+
+        // Şərtin ödənmədiyi hal üçün qeyri hal(else)-dən istifadə edirik
+        } else {
+
+        // Ekrana "Wrong answer" yazısnı veririk
+            System.out.println("Wrong answer");
         }
         
     }
