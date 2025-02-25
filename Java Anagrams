@@ -18,8 +18,13 @@ public class Solution {
         char [] arrayA = A.toLowerCase().toCharArray();
         char [] arrayB = B.toLowerCase().toCharArray();
 
+        /* arrayA massivindeki elementleri Arrays.sort metodu ile artan sirayla siralayir.
+        meselenin esas helledici meqami budur cunki eger verilen String-ler anagramdirsa(eyni herifden eyni sayda)
+        elifabya gore siralandiqda eyni yazi alinmalidir(meselen "yat" ve "tay" sozleri ikisinde "aty" olur) */
         java.util.Arrays.sort(arrayA);
         java.util.Arrays.sort(arrayB);
+
+        // 
         retValue = java.util.Arrays.equals(arrayA, arrayB);
     }
    return retValue;
