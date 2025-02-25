@@ -24,9 +24,11 @@ public class Solution {
         java.util.Arrays.sort(arrayA);
         java.util.Arrays.sort(arrayB);
 
-        // 
+        // arrayA ve arrayB massivlerini Arrays.equals metodundan istifade ederek muqayise edir.
+        Eger beraber olsa retValue deyishenine "true" sehv olsa "false" verir cunki retValue Boolean-dir. 
         retValue = java.util.Arrays.equals(arrayA, arrayB);
     }
+    // retValue deyisheninin qiymetini qaytarir 
    return retValue;
 }
 
