@@ -1,12 +1,23 @@
-import java.util.Scanner;
+import java.util.Scanner; // Inputs(verilenleri) almaq uchun Scanner lazimdir bunun uchunse Scanner class-ni daxil edirik
 
 public class Solution {
 
+    // isAnagram adli static bir method yaradiriq. isAnagram A ve B adli 2 String parametre sahibdir ve Boolean yeni ya true ya false qaytarir 
     static boolean isAnagram(String A, String B) {
+
+    // retValue adli Boolean novunden olan bir deyisen yaradiriq ve ona false qiymetini veririk
     Boolean retValue = false;
+
+    // if shertinden istifade ederek bele bir shert qoyuruq ki A ve B-nin bosh olmadiqi halda {} - bu moterize arasindaki kodu icra etsin
     if(A != null && B != null) {
+
+        /* A String-ni butun herfleri kicik yazir
+        (cunki mesele sozunde testin case sensitive(A ve a ferqlidir) olmadigi deyilir,
+        ona gore yazdigimiz kodun ferqlendirmemesi uchun lowercase-den istifade edirik cunki normalda Java case sensitive-dir)
+        Daha sonra hemin herfleri arrayA adli char novunden olan massive yigir */
         char [] arrayA = A.toLowerCase().toCharArray();
         char [] arrayB = B.toLowerCase().toCharArray();
+
         java.util.Arrays.sort(arrayA);
         java.util.Arrays.sort(arrayB);
         retValue = java.util.Arrays.equals(arrayA, arrayB);
