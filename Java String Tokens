@@ -1,13 +1,13 @@
-import java.io.*;
-import java.util.*;
-public class Solution {
+import java.io.*;        // java.io-daki butun class-lari idxal edir(import)
+import java.util.*;        // java.util-deki butun class-lari idxal edir(import)
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
+public class Solution {        // "Solution" adli public olan class-i yaradir
+    public static void main(String[] args) {        // Main(main) metodu yaradir ki bu proqramin bashlangic noqtesidir
+        Scanner scan = new Scanner(System.in);        // "scan" adli scanner obyektini yaradir
+        String s = scan.nextLine();        // String novunden olan "s" adli deyisheni yaradir ve onu scanner-den alinan input ile 
 
-        s = s.trim();
-        if (s.length() == 0) {
+        s = s.trim();        // Elde edilen "s" adli String-in evvelinde ve ya axirinda olan boshluqlari aradan qaldirir. Niye? chunki daha sonra istifade edeceyimiz split metodu duz ishlesin, eksi teqdirde bu boshluqlar da hesablanir 
+        if (s.length() == 0) {        // Eger verilen String boshdursa 0-i ekrana verir
             System.out.println(0);
         } else {
             String[] strings = s.split("['!?,._@ ]+");
@@ -15,6 +15,6 @@ public class Solution {
             for (String str : strings)
                 System.out.println(str);
         }
-        scan.close();
+        scan.close();        // Resurs sızmasının qarşısını almaq uchun, "scan" adli scanner-i baghlayir
     }
 }
