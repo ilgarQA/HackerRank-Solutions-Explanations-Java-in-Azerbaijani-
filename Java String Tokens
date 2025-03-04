@@ -1,20 +1,53 @@
-import java.io.*;        // java.io-daki butun class-lari idxal edir(import)
-import java.util.*;        // java.util-deki butun class-lari idxal edir(import)
+// java.io-daki ve java util-deki butun class-lari idxal edir(import)
+import java.io.*;
+import java.util.*;
 
-public class Solution {        // "Solution" adli public olan class-i yaradir
-    public static void main(String[] args) {        // Main(main) metodu yaradir ki bu proqramin bashlangic noqtesidir
-        Scanner scan = new Scanner(System.in);        // "scan" adli scanner obyektini yaradir
-        String s = scan.nextLine();        // String novunden olan "s" adli deyisheni yaradir ve onu scanner-den alinan input ile 
+// "Solution" adli public olan class-i yaradir
+public class Solution {
 
-        s = s.trim();        // Elde edilen "s" adli String-in evvelinde ve ya axirinda olan boshluqlari aradan qaldirir. Niye? chunki daha sonra istifade edeceyimiz split metodu duz ishlesin, eksi teqdirde bu boshluqlar da hesablanir 
-        if (s.length() == 0) {        // Eger verilen String boshdursa 0-i ekrana verir
+    // Main(main) metodu yaradir ki bu proqramin bashlangic noqtesidir
+    public static void main(String[] args) {
+
+        // "scan" adli scanner obyektini yaradir
+        Scanner scan = new Scanner(System.in);
+
+        // String novunden olan "s" adli deyisheni yaradir ve onu scanner-den alinan input-a beraber edir
+        String s = scan.nextLine();
+
+        // Elde edilen "s" adli String-in evvelinde ve ya axirinda olan boshluqlari aradan qaldirir. Niye? chunki daha sonra istifade edeceyimiz split metodu duz ishlesin, eksi teqdirde bu boshluqlar da hesablanir 
+        s = s.trim();
+
+        // Verilen String-in uzunlughunun 0-a beraber olmasini yeni bosh olmasini yoxlayir
+        if (s.length() == 0) {
+
+            // Eger qoydughuuz if sherti odenirse yeni String boshdursa 0-i ekrana verir
             System.out.println(0);
+
+        // Eger qoyulan if sherti odenmirse elsin moterizeleri daxilinde olan({...}) kodlari icra edir
         } else {
+
+            /* 
+            String novunden olan "strings" adli massivi(array) yaradir.
+            "split" funksiyasindan istifade ederek "s" String-i sozlere bolur(boshlughlara esasen) ve bu massive yigir
+            "['!?,._@ ]+" - bu a regex pattern adlanir. Meqsedimiz "split"-e sozleri ayirarken bu simvollari nezere alma demekdir
+            */
             String[] strings = s.split("['!?,._@ ]+");
+
+            // Massivin uzunlugunu ekranna verir
             System.out.println(strings.length);
+
+            /* 
+            Bu "enchanced for loop" adlanir.
+            Muveqqeti bir "str" adli String(chunki massivimiz de String-dir) novunden olan deyishenden istifade ederek,
+            massiv-in elementlerini(sozleri) yeni yaratdigimiz "str" String-e yigir
+            */
             for (String str : strings)
+
+                // Donguye uyghun deyishen "str" qiymetlerini ekrana verir
                 System.out.println(str);
         }
-        scan.close();        // Resurs sızmasının qarşısını almaq uchun, "scan" adli scanner-i baghlayir
+
+        // Resurs sızmasının qarşısını almaq uchun, "scan" adli scanner-i baghlayir
+        scan.close();
     }
 }
