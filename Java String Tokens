@@ -50,7 +50,7 @@ public class Solution {
                 System.out.println(str);
         }
 
-        // Resurs sızmasının qarşısını almaq uchun, "scan" adli scanner-i baghlayir
+        // Resurs sizmasinin qarshisini almaq uchun, "scan" adli scanner-i baghlayir
         scan.close();
     }
 }
