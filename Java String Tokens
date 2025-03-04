@@ -14,16 +14,19 @@ public class Solution {
         // String novunden olan "s" adli deyisheni yaradir ve onu scanner-den alinan input-a beraber edir
         String s = scan.nextLine();
 
-        // Elde edilen "s" adli String-in evvelinde ve ya axirinda olan boshluqlari aradan qaldirir. Niye? chunki daha sonra istifade edeceyimiz split metodu duz ishlesin, eksi teqdirde bu boshluqlar da hesablanir 
+        /*
+        Elde edilen "s" adli String-in evvelinde ve ya axirinda olan boshluqlari aradan qaldirir.
+        Niye? chunki daha sonra istifade edeceyimiz "split" funksiyasi duz ishlesin, eksi teqdirde bu boshluqlar da hesablanir
+        */
         s = s.trim();
 
         // Verilen String-in uzunlughunun 0-a beraber olmasini yeni bosh olmasini yoxlayir
         if (s.length() == 0) {
 
-            // Eger qoydughuuz if sherti odenirse yeni String boshdursa 0-i ekrana verir
+            // Eger qoydughuuz if sherti odenirse, yeni String boshdursa 0-i ekrana verir
             System.out.println(0);
 
-        // Eger qoyulan if sherti odenmirse elsin moterizeleri daxilinde olan({...}) kodlari icra edir
+        // Eger qoyulan if sherti odenmirse else-in moterizeleri daxilinde olan({...}) kodlari icra edir
         } else {
 
             /* 
