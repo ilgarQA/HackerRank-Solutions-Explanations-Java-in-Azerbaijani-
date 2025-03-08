@@ -1,18 +1,58 @@
+// Scanner class-i ve regex-deki butun class-lari idxal edir(import)
 import java.util.Scanner;
 import java.util.regex.*;
 
+// "Solution" adli public olan class-i yaradir
 public class Solution {
+
+    // Main(main) metodu yaradir ki bu proqramin bashlangic noqtesidir
     public static void main(String[] args){
+
+        // "in" adli scanner obyektini yaradir
         Scanner in = new Scanner(System.in);
+
+        /*
+        Int(int) novunden olan "testCases"(testHallari) adli deyisheni yaradir ve onu scanner-den alinan input-a beraber edir.
+        Adi scanner.nextInt();-den istifade olunmur chunki mesele reqemden sonra yazi verir ki,
+        nextInt() reqemi oxuyur amma bufferdeki \n oxumur. Buffer-in her setirnde sonda \n var bir sonraki setre kecmek uchun.
+        Bunu scanner.nextLine();-ile hell ede bilerdik, amma bu da verilen regex pattern-lerden yalniz birincisini goturecekdi.
+        Chunki nextLine() buffer-deki /n-dek olanlari oxuyur bu zaman da birinci setirden qalan /n-i oxuyur bosh String qaytarir, 
+        chunki birinci setirde olan /n-e qederki verilenleri artiq next.Int() oxuyub.
+        Sonra dushur yeni setire ki burada birinci input-u alir ve novbeti inputu ala bilmir, 
+        chunki artiq verilmish n-qeder input alib biri bosh String, biri birinci regex pattern.
+        Ona gore de Integer.parseInt(in.nextLine());-den istifade ederek reqemden sonra yazilari oturmeden oxumaq problemi hell olur
+        */
         int testCases = Integer.parseInt(in.nextLine());
+
+        // Donguden(while loop) istifade ederek testCase 0-dan boyuk oldugu halda {...} icra edir 
         while(testCases > 0){
+
+            // String novunden olan "pattern" adli deyisheni yaradir ve onu scanner-den alinan input-a beraber edir
             String pattern = in.nextLine();
+
+            //Try-catch blokundan istifade edilir sehv reftari(error handling) uchun
             try {
+
+                // Pattern.compile verilmish "pattern" deyishenini compile edir
                 Pattern.compile(pattern);
+
+                // Eger verilen "pattern" uyghundursa(valid), onda "Valid" yazisini ekrana verir
                 System.out.println("Valid");
+
+            /* Eger verilen "pattern" uygun deyilse(invalid), "PatternSyntaxException" atilir
+            sual yarana biler niye if-esle deilde try-catch
+            chunki invalid pattern oldugu zaman Java sehvi gorur ve proqramin icrasini dayandirir
+            amma bize sehv olsa bele ekrana yazi("Invalid") vermek lazimdir.
+            Ona gore PatternSyntaxException sehv-i atilanda ki catch-de bunu tutur ve {...} icra edilir
+            yeni bununla sehvin proqramin qalan hissesini icra edilmesine mane olunmasinin qarshisi alinir.
+            */
             } catch (PatternSyntaxException e) {
+
+                // Ekrana "Invalid" yazisini verir
                 System.out.println("Invalid");
             }
+
+            // testCases deyishenini azaldir ki dongu n-qeder getsin. Her defe azalir ve sifira catdiqda(1 olduqda) dayanir
             testCases--;
         }
     }
